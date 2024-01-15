@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class test : MonoBehaviour
 {
@@ -24,5 +25,26 @@ public class test : MonoBehaviour
         {
             animator.SetBool("walking", false);
         }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            animator.SetBool("walking", true);
+        }
+    
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            animator.SetBool("walking", true);
+        }
+     
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            animator.SetBool("walking", true);
+        }
+    
     }
 }
